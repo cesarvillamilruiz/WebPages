@@ -1,0 +1,198 @@
+/*Variables CSS*/
+:root {
+  --header-height: 6rem;
+  --font-semi: 600;
+  --font-bold: 700;
+}
+
+/*Colores*/
+:root {
+  --color-parking-orcuro: #858585;
+  --color-parking-claro: #90d400;
+  --color-parking-verde-claro: #bbf236;
+  --color-blue-parking: #5db2be;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+}
+
+/*Fuente*/
+:root {
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1rem;
+  --normal-font-size: 0.75rem;
+}
+
+/*Margenes*/
+:root {
+  --mb-0: 0.2rem;
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: o;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right top, #da6955, #dc8171);
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.main_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_header h1,
+.main_header h2 {
+  text-align: center;
+}
+
+.main_header h1 {
+  font-size: var(--h1-font-size);
+  color: var(--color-parking-verde-claro);
+}
+
+.main_header h2 {
+  font-size: var(--h2-font-size);
+  color: var(--color-parking-orcuro);
+}
+
+span {
+  color: var(--color-parking-verde-claro);
+}
+
+.card_container {
+  display: grid;
+  grid-template-columns: 90%;
+  justify-content: center;
+  row-gap: var(--mb-3);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  border-radius: 2rem;
+  padding: var(--mb-2) 0;
+  backdrop-filter: blur(2rem);
+  overflow: hidden;
+}
+
+.new-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.new-link > a {
+  margin: auto;
+}
+
+.car_img_container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--mb-1);
+  box-shadow: 5px 5px 5px #999;
+}
+.car_img_container:hover .new-link {
+  bottom: 0;
+}
+
+p:first-child {
+  margin-bottom: 0;
+}
+
+div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div:last-child > a > i {
+  font-size: var(--mb-4);
+}
+.card_img {
+  max-width: 100%;
+  border-radius: var(--mb-1);
+}
+
+.card_text,
+i {
+  margin-top: 0;
+  color: var(--color-parking-orcuro);
+  font-weight: bold;
+}
+
+.circle_1,
+.circle_2 {
+  position: fixed;
+  width: calc(var(--mb-6) * 2.8);
+  height: calc(var(--mb-6) * 2.8);
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(144, 212, 0, 0.9),
+    rgba(109, 199, 221, 0.6)
+  );
+  z-index: -1;
+}
+
+.circle_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  left: 1%;
+  top: 4%;
+}
+
+.circle_2 {
+  right: -5%;
+  bottom: 10%;
+}
+
+.circle_1 > img {
+  max-width: var(--mb-6);
+  max-height: var(--mb-6);
+}
+
+@media screen and (min-width: 1000px) {
+  .card_container {
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 45% 45%;
+    column-gap: var(--mb-3);
+  }
+
+  div:last-child,
+  div:first-child {
+    grid-column: 1/3;
+  }
+
+  .circle_1,
+  .circle_2 {
+    width: calc(var(--mb-6) * 4.8);
+    height: calc(var(--mb-6) * 4.8);
+  }
+
+  .circle_1 {
+    top: -10%;
+    left: -3%;
+  }
+}
